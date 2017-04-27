@@ -42,7 +42,7 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`user_id`, `user_name`, `is_admin`, `password`, `email`, `deleted`) VALUES
+INSERT INTO `users` (`user_id`, first_name, `is_admin`, `password`, `email`, `deleted`) VALUES
   (1, 'demo', 0, '$2y$10$vTje.ndUFKHyuotY99iYkO.2aHJUgOsy2x0RMXP1UmrTe6CQsKbtm', 'demo@example.com', 0);
 
 --
@@ -61,7 +61,7 @@ ADD UNIQUE KEY `language_phrase_controller_action_index` (`language`,`phrase`,`c
 --
 ALTER TABLE `users`
 ADD PRIMARY KEY (`user_id`),
-ADD UNIQUE KEY `UNIQUE` (user_name);
+  ADD UNIQUE KEY `UNIQUE` (first_name);
 
 --
 -- AUTO_INCREMENT for dumped tables
