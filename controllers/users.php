@@ -30,7 +30,6 @@ class users extends Controller
     {
         $user_id = $this->params[0];
         $this->user = get_first("SELECT * FROM users WHERE user_id = {$user_id}");
-        //$this->user['skills'] = explode(",",$this->user['skills']);
     }
 
     function ajax_add_user()
