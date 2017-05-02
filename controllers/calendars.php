@@ -19,7 +19,20 @@ class calendars extends Controller
 
         //kui kasutajal on juba varem valitud vabad päevad
         if (!empty($this->dates)) {
+            //String to array
             $this->dates = explode(",", $this->dates['rest_days']);
+
+            //Saan tänase päeva, et võrrelda, kas päev on möödas või mitte
+            $today = date("m-d-Y");
+            foreach ($this->dates as $key => $date) {
+                //kui päev on möödas eemaldan ta nimekirjast, nii ei teki andmebaasi massiivseid stringe
+                if ($today > $date) {
+                    unset($this->dates[$key]);
+                }
+            }
+
+            //Korrastab array key'de järjekorra, kui vahepeal on mõned unset'itud
+            $this->dates = array_values($this->dates);
             $this->dates = json_encode($this->dates);
         } else {
             //kui ei ole, siis hardcode'ga lisame ühe, et saaks uusi valida(hiljem eemaldatakse)

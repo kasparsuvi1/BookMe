@@ -14,7 +14,7 @@
             var dates = <?= $dates ?>;
             console.log(dates);
             $("#datepicker").multiDatesPicker({
-                maxPicks: 99,
+                minDate: 0, // today
                 numberOfMonths: [1, 3],
                 firstDay: 1,
                 addDates: dates,
@@ -23,7 +23,6 @@
                     $("#save").text("Save").removeClass("btn-success").addClass("btn-default");
                 }
             });
-            $("#datepicker").addClass("center");
         });
 
         function Save() {

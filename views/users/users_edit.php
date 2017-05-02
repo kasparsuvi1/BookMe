@@ -1,3 +1,4 @@
+<?php if ($auth->is_admin OR $auth->user_id == $params[0]): ?>
 <head>
 
     <meta charset="utf-8">
@@ -244,6 +245,16 @@
 
     </div>
 </div>
+<?php else: ?>
+    <div style="margin: 0 auto;width: 800px;">
+        <div>
+            <h3>Te ei peaks siin lehel olema!</h3>
+        </div>
+        <img src="http://www.slappytickle.com/wp-content/uploads/2013/03/what-you-looking-at.jpg">
+    </div>
+
+
+<?php endif; ?>
 <script>
 
 

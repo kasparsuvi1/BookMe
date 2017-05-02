@@ -49,6 +49,7 @@
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
+                <li><a href="booking"><?= __('Book Users') ?></a></li>
                 <li><a href="users/edit/<?= $auth->user_id ?>"><?= __('Profile') ?></a></li>
                 <li><a href="calendars/view/<?= $auth->user_id ?>"><?= __('Calendar') ?></a></li>
                 <?php if ($auth->is_admin): ?>
